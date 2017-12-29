@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Broken Screen Classifier</title>
+  
+  
+  
+      <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+
+</head>
+
+<body>
+
+		<h1>Classify Broken Mobile Screens Using <span>Convolutional Neural Networks</span></h1>
+         <form method=post enctype=multipart/form-data style="float: center; margin: 30%; margin-top:7%; border: 1px Dashed" action="/">
+              <div style="background-color:white; border:solid 1px;">
+                  <p><input type=file name=file>
+                  <input type=submit name="myBtn" value="Upload & Predict" style="float:right;border:none;color:white;padding:3px 20px;cursor:pointer;background-color: #4CAF50;">
+              </div>
+            <br>
+             <hr class="style14">
+            <br>
+              <div style="background-color:white; border:solid 1px;">
+                  <p><input type=text name="URL" placeholder="Enter URL of the image" style="width:60%;border: none;padding: 3px;">
+                  <input type=submit name="myBtn" value="Get & Predict" style="float:right;border:none;color:white;padding:3px 20px;cursor:pointer;background-color: #4CAF50;">
+              </div>
+              <div style="align-content:  center;">
+                  <br />
+                  <img src="static/Uploads/{{ imgLoc }}" alt="User Image" style="/* align-content:  center; */width: 50%;/* align-self:  center; *//* -webkit-box-align:  center; *//* text-align:  center; */display:  block;margin:  auto; max-width:200px;">
+              </div>
+              <div style="border:none;color: unset;text-align:  center;vertical-align:  middle;font-size:  20px;">
+                  <hr />
+                  <br />Predicted Result -
+                  <strong><span> {{ response }}</span></strong>
+              </div>
+         </form>
+  		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+	    <script src="{{ url_for('static',filename='index.js') }}"></script>
+</body>
+</html>
